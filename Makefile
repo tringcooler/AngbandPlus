@@ -2,17 +2,20 @@
 #DEBUG       := 1
 #TEST        := 1
 
-SRC_PATH    := src
-
-TARGET      := target.exe
-
+TAR_NAME    := angband
 TAR_PLT     := win
 
+SRC_PATH    := src
+
+TARGET      := $(TAR_NAME).exe
+
 SRC_ALL     := $(wildcard $(SRC_PATH)/*.c)
-SRC_TST     := $(filter $(SRC_PATH)/test_%.c, $(SRC_ALL))
+SRC_ALL     += $(wildcard $(SRC_PATH)/*.rc)
 SRC_TPLT    := $(SRC_PATH)/main-$(TAR_PLT).c
 SRC_APLT    := $(filter-out $(SRC_TPLT), $(wildcard $(SRC_PATH)/main-*.c))
-SRC_DST     := $(filter-out $(SRC_APLT), $(filter-out $(SRC_TST), $(SRC_ALL)))
+SRC_ALL     := $(filter-out $(SRC_APLT), $(SRC_ALL))
+SRC_TST     := $(filter $(SRC_PATH)/test_%.c, $(SRC_ALL))
+SRC_DST     := $(filter-out $(SRC_TST), $(SRC_ALL))
 
 ifneq ($(DEBUG),)
 TEST        := 1
@@ -23,13 +26,16 @@ SRC         := $(SRC_DST)
 else
 SRC         := $(SRC_ALL)
 endif
-OBJ         := $(patsubst %.c, %.o, $(SRC))
+OBJ         := $(patsubst %.rc, %.o, $(patsubst %.c, %.o, $(SRC)))
 
 CC = gcc
 CC_INC := -I.
 CC_FLAG :=
 #CC_FLAG := -DUSE_TRANSPARENCY -DWINDOWS
 CC_DEF :=
+
+RC := windres
+RC_FLAG :=
 
 LD := gcc
 LD_FLAG := -lgdi32 -lcomdlg32
@@ -46,7 +52,10 @@ endif
 
 #CC_FLAG += $(CC_FLAG_OPT) -Werror -Wall
 
-target: $(TARGET)
+#target: $(TARGET)
+
+%.o: %.rc
+	$(RC) $(RC_FLAG) $< -o $@
 
 %.o: %.c
 	$(CC) $(CC_FLAG) $(CC_INC) $(CC_DEF) -c $< -o $@
@@ -64,4 +73,4 @@ clean:
 	find . -name "*.stackdump" -exec rm -rf {} \;
 	@echo done
 	
-.PHONY: target clean
+.PHONY: $(TARGET) clean

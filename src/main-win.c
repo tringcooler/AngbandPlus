@@ -2688,7 +2688,6 @@ static void setup_menus(void)
 	int i;
 
 	HMENU hm = GetMenu(data[0].w);
-    printf("here hm=0x%x\n", hm);exit(0);
 
 #ifdef USE_SAVER
 	main_menu = hm;
