@@ -38,7 +38,7 @@ RC := windres
 RC_FLAG :=
 
 LD := gcc
-LD_FLAG := -lgdi32 -lcomdlg32
+LD_FLAG := -lgdi32 -lcomdlg32 -mwindows
 
 ifeq ($(DEBUG),)
 CC_FLAG_OPT := -O2
