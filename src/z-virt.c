@@ -62,7 +62,7 @@ vptr (*rpanic_aux)(huge) = NULL;
  * or if not, it can be used to save things, clean up, and exit.
  * By default, this function simply crashes the computer.
  */
-static vptr rpanic(huge len)
+/*static*/ vptr rpanic(huge len)
 {
 	/* Hopefully, we have a real "panic" function */
 	if (rpanic_aux) return ((*rpanic_aux)(len));

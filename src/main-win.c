@@ -2688,6 +2688,7 @@ static void setup_menus(void)
 	int i;
 
 	HMENU hm = GetMenu(data[0].w);
+    printf("here hm=0x%x\n", hm);exit(0);
 
 #ifdef USE_SAVER
 	main_menu = hm;
@@ -3684,7 +3685,7 @@ static void handle_wm_paint(HWND hWnd)
 	term_data *td;
 
 	/* Acquire proper "term_data" info */
-	td = (term_data *)GetWindowLong(hWnd, 0);
+	td = (term_data *)GetWindowLongPtr(hWnd, GWLP_USERDATA);
 
 	BeginPaint(hWnd, &ps);
 
@@ -3718,7 +3719,7 @@ static LRESULT FAR PASCAL AngbandWndProc(HWND hWnd, UINT uMsg,
 #endif /* USE_SAVER */
 
 	/* Acquire proper "term_data" info */
-	td = (term_data *)GetWindowLong(hWnd, 0);
+	td = (term_data *)GetWindowLongPtr(hWnd, GWLP_USERDATA);
 
 	/* Handle message */
 	switch (uMsg)
@@ -3726,7 +3727,7 @@ static LRESULT FAR PASCAL AngbandWndProc(HWND hWnd, UINT uMsg,
 		/* XXX XXX XXX */
 		case WM_NCCREATE:
 		{
-			SetWindowLong(hWnd, 0, (LONG)(my_td));
+			SetWindowLongPtr(hWnd, GWLP_USERDATA, (LONG_PTR)(my_td));
 			break;
 		}
 
@@ -4038,7 +4039,7 @@ static LRESULT FAR PASCAL AngbandListProc(HWND hWnd, UINT uMsg,
 
 
 	/* Acquire proper "term_data" info */
-	td = (term_data *)GetWindowLong(hWnd, 0);
+	td = (term_data *)GetWindowLongPtr(hWnd, GWLP_USERDATA);
 
 	/* Process message */
 	switch (uMsg)
@@ -4046,7 +4047,7 @@ static LRESULT FAR PASCAL AngbandListProc(HWND hWnd, UINT uMsg,
 		/* XXX XXX XXX */
 		case WM_NCCREATE:
 		{
-			SetWindowLong(hWnd, 0, (LONG)(my_td));
+			SetWindowLongPtr(hWnd, GWLP_USERDATA, (LONG_PTR)(my_td));
 			break;
 		}
 
