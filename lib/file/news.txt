@@ -1,7 +1,7 @@
 
-                          *************************
-                          ** sCthangband 1.0.19  **
-                          *************************
+                          *****************************
+                          ** sCthangband 1.0.20 beta **
+                          *****************************
 
            Based on Moria:    Copyright (c) 1985 Robert Alan Koeneke
                and Umoria:    Copyright (c) 1989 James E. Wilson
