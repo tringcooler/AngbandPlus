@@ -17,39 +17,25 @@ ANGBAND MENU
                 POPUP "&Visibility"
                 {
                         MENUITEM "&sCthAngband", 200
-                        MENUITEM "&Mirror", 201
-                        MENUITEM "&Recall", 202
-                        MENUITEM "&Choice", 203
-                        MENUITEM "Xtra-&1", 204
-                        MENUITEM "Xtra-&2", 205
-                        MENUITEM "Xtra-&3", 206
-                        MENUITEM "Xtra-&4", 207
-                        /*MENUITEM "Term-&1", 201
+                        MENUITEM "Term-&1", 201
                         MENUITEM "Term-&2", 202
                         MENUITEM "Term-&3", 203
                         MENUITEM "Term-&4", 204
                         MENUITEM "Term-&5", 205
                         MENUITEM "Term-&6", 206
-                        MENUITEM "Term-&7", 207*/
+                        MENUITEM "Term-&7", 207
                 }
 
                 POPUP "&Font"
                 {
                         MENUITEM "&sCthAngband", 210
-                        MENUITEM "&Mirror", 211
-                        MENUITEM "&Recall", 212
-                        MENUITEM "&Choice", 213
-                        MENUITEM "Xtra-&1", 214
-                        MENUITEM "Xtra-&2", 215
-                        MENUITEM "Xtra-&3", 216
-                        MENUITEM "Xtra-&4", 217
-                        /*MENUITEM "Term-&1", 211
+                        MENUITEM "Term-&1", 211
                         MENUITEM "Term-&2", 212
                         MENUITEM "Term-&3", 213
                         MENUITEM "Term-&4", 214
                         MENUITEM "Term-&5", 215
                         MENUITEM "Term-&6", 216
-                        MENUITEM "Term-&7", 217*/
+                        MENUITEM "Term-&7", 217
                 }
 
                 MENUITEM SEPARATOR
@@ -57,61 +43,61 @@ ANGBAND MENU
                 POPUP "&Bizarre Display"
                 {
                         MENUITEM "&sCthAngband", 230
-                        MENUITEM "&Mirror", 231
-                        MENUITEM "&Recall", 232
-                        MENUITEM "&Choice", 233
-                        MENUITEM "Xtra-&1", 234
-                        MENUITEM "Xtra-&2", 235
-                        MENUITEM "Xtra-&3", 236
-                        MENUITEM "Xtra-&4", 237
+                        MENUITEM "Term-&1", 231
+                        MENUITEM "Term-&2", 232
+                        MENUITEM "Term-&3", 233
+                        MENUITEM "Term-&4", 234
+                        MENUITEM "Term-&5", 235
+                        MENUITEM "Term-&6", 236
+                        MENUITEM "Term-&7", 237
                 }
 
                 POPUP "&Increase Tile Width"
                 {
                         MENUITEM "&sCthAngband", 240
-                        MENUITEM "&Mirror", 241
-                        MENUITEM "&Recall", 242
-                        MENUITEM "&Choice", 243
-                        MENUITEM "Xtra-&1", 244
-                        MENUITEM "Xtra-&2", 245
-                        MENUITEM "Xtra-&3", 246
-                        MENUITEM "Xtra-&4", 247
+                        MENUITEM "Term-&1", 241
+                        MENUITEM "Term-&2", 242
+                        MENUITEM "Term-&3", 243
+                        MENUITEM "Term-&4", 244
+                        MENUITEM "Term-&5", 245
+                        MENUITEM "Term-&6", 246
+                        MENUITEM "Term-&7", 247
                 }
 
                 POPUP "&Decrease Tile Width"
                 {
                         MENUITEM "&sCthAngband", 250
-                        MENUITEM "&Mirror", 251
-                        MENUITEM "&Recall", 252
-                        MENUITEM "&Choice", 253
-                        MENUITEM "Xtra-&1", 254
-                        MENUITEM "Xtra-&2", 255
-                        MENUITEM "Xtra-&3", 256
-                        MENUITEM "Xtra-&4", 257
+                        MENUITEM "Term-&1", 251
+                        MENUITEM "Term-&2", 252
+                        MENUITEM "Term-&3", 253
+                        MENUITEM "Term-&4", 254
+                        MENUITEM "Term-&5", 255
+                        MENUITEM "Term-&6", 256
+                        MENUITEM "Term-&7", 257
                 }
 
                 POPUP "I&ncrease Tile Height"
                 {
                         MENUITEM "&sCthAngband", 260
-                        MENUITEM "&Mirror", 261
-                        MENUITEM "&Recall", 262
-                        MENUITEM "&Choice", 263
-                        MENUITEM "Xtra-&1", 264
-                        MENUITEM "Xtra-&2", 265
-                        MENUITEM "Xtra-&3", 266
-                        MENUITEM "Xtra-&4", 267
+                        MENUITEM "Term-&1", 261
+                        MENUITEM "Term-&2", 262
+                        MENUITEM "Term-&3", 263
+                        MENUITEM "Term-&4", 264
+                        MENUITEM "Term-&5", 265
+                        MENUITEM "Term-&6", 266
+                        MENUITEM "Term-&7", 267
                 }
 
                 POPUP "D&ecrease Tile Height"
                 {
                         MENUITEM "&sCthAngband", 270
-                        MENUITEM "&Mirror", 271
-                        MENUITEM "&Recall", 272
-                        MENUITEM "&Choice", 273
-                        MENUITEM "Xtra-&1", 274
-                        MENUITEM "Xtra-&2", 275
-                        MENUITEM "Xtra-&3", 276
-                        MENUITEM "Xtra-&4", 277
+                        MENUITEM "Term-&1", 271
+                        MENUITEM "Term-&2", 272
+                        MENUITEM "Term-&3", 273
+                        MENUITEM "Term-&4", 274
+                        MENUITEM "Term-&5", 275
+                        MENUITEM "Term-&6", 276
+                        MENUITEM "Term-&7", 277
                 }
         }
 

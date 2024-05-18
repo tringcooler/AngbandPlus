@@ -381,28 +381,26 @@ W:---reset---
 
 #Window 'sCthangband'
 
-#Window 'Mirror'
-W:Mirror:monster recall:d:.
-W:Mirror:object details:d:.
-W:Mirror:floor information:e:.
-W:Mirror:keymap action:e:e
+#Window 'Term-1'
+W:Term-1:monster recall:d:.
+W:Term-1:object details:d:.
+W:Term-1:floor information:e:.
+W:Term-1:keymap action:e:e
 
-#Window 'Recall'
-W:Recall:help:a:a
+#Window 'Term-2'
+W:Term-2:help:a:a
 
-#Window 'Choice'
+#Window 'Term-3'
+W:Term-3:inventory:a:a
 
-#Window 'Xtra-1'
-W:Xtra-1:inventory:a:a
+#Window 'Term-4'
+W:Term-4:equipment:b:b
 
-#Window 'Xtra-2'
-W:Xtra-2:equipment:b:b
+#Window 'Term-5'
+W:Term-5:messages:a:a
 
-#Window 'Xtra-3'
-W:Xtra-3:messages:a:a
-
-#Window 'Xtra-4'
-W:Xtra-4:overhead view:a:a
+#Window 'Term-6'
+W:Term-6:overhead view:a:a
 
 
 # Status description locations

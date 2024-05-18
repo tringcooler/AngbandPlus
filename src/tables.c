@@ -3617,20 +3617,13 @@ martial_arts ma_blows[MAX_MA+1] =
 
 window_type windows[ANGBAND_TERM_MAX] = {
 BLANK_WINDOW(GAME_NAME)
-BLANK_WINDOW("Mirror")
-BLANK_WINDOW("Recall")
-BLANK_WINDOW("Choice")
-BLANK_WINDOW("Xtra-1")
-BLANK_WINDOW("Xtra-2")
-BLANK_WINDOW("Xtra-3")
-BLANK_WINDOW("Xtra-4")
-/*BLANK_WINDOW("Term-1")
+BLANK_WINDOW("Term-1")
 BLANK_WINDOW("Term-2")
 BLANK_WINDOW("Term-3")
 BLANK_WINDOW("Term-4")
 BLANK_WINDOW("Term-5")
 BLANK_WINDOW("Term-6")
-BLANK_WINDOW("Term-7")*/
+BLANK_WINDOW("Term-7")
 };
 
 #define MONCOL(NAME) \
