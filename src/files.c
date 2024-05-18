@@ -2568,7 +2568,7 @@ static void display_player_misc_info(void)
 	put_str("Race    :", 4, 1);
 	put_str("Template:", 5, 1);
 
-	c_put_str(TERM_L_BLUE, op_ptr->full_name, 2, 11);
+	c_put_str(TERM_L_BLUE, player_name, 2, 11);
 	c_put_str(TERM_L_BLUE, sp_ptr->title, 3, 11);
 	c_put_str(TERM_L_BLUE, rp_ptr->title, 4, 11);
 	c_put_str(TERM_L_BLUE, tp_name+cp_ptr->name, 5, 11);
@@ -4826,20 +4826,20 @@ void process_player_name(void)
 
 
 	/* Cannot be too long */
-	if (strlen(op_ptr->full_name) > 15)
+	if (strlen(player_name) > 15)
 	{
 		/* Name too long */
-		quit_fmt("The name '%s' is too long!", op_ptr->full_name);
+		quit_fmt("The name '%s' is too long!", player_name);
 	}
 
 	/* Cannot contain "icky" characters */
-	for (i = 0; op_ptr->full_name[i]; i++)
+	for (i = 0; player_name[i]; i++)
 	{
 		/* No control characters */
-		if (iscntrl(op_ptr->full_name[i]))
+		if (iscntrl(player_name[i]))
 		{
 			/* Illegal characters */
-			quit_fmt("The name '%s' contains control chars!", op_ptr->full_name);
+			quit_fmt("The name '%s' contains control chars!", player_name);
 		}
 	}
 
@@ -4847,9 +4847,9 @@ void process_player_name(void)
 #ifdef MACINTOSH
 
 	/* Extract "useful" letters */
-	for (i = 0; op_ptr->full_name[i]; i++)
+	for (i = 0; player_name[i]; i++)
 	{
-		char c = op_ptr->full_name[i];
+		char c = player_name[i];
 
 		/* Convert "colon" and "period" */
 		if ((c == ':') || (c == '.')) c = '_';
@@ -4861,9 +4861,9 @@ void process_player_name(void)
 #else
 
 	/* Extract "useful" letters */
-	for (i = 0; op_ptr->full_name[i]; i++)
+	for (i = 0; player_name[i]; i++)
 	{
-		char c = op_ptr->full_name[i];
+		char c = player_name[i];
 
 		/* Accept some letters */
 		if (isalpha(c) || isdigit(c)) op_ptr->base_name[k++] = c;
@@ -4888,7 +4888,7 @@ void process_player_name(void)
 
 
 	/* Change the savefile name */
-	if (!savefile[0])
+	// always change savefile name //if (!savefile[0])
 	{
 		char temp[128];
 
@@ -4943,12 +4943,12 @@ bool get_name(void)
 		move_cursor(2, 15);
 
 		/* Save the player name */
-		strcpy(tmp, op_ptr->full_name);
+		strcpy(tmp, player_name);
 
 		/* Get an input, ignore "Escape" */
 		if (askfor_aux(tmp, 15))
 		{
-			strcpy(op_ptr->full_name, tmp);
+			strcpy(player_name, tmp);
 			changed = TRUE;
 		}
 
@@ -4960,7 +4960,7 @@ bool get_name(void)
 	}
 
 	/* Pad the name (to clear junk) */
-	sprintf(tmp, "%-15.15s", op_ptr->full_name);
+	sprintf(tmp, "%-15.15s", player_name);
 
 	/* Re-Draw the name (in light blue) */
 	c_put_str(TERM_L_BLUE, tmp, 2, 15);
@@ -5167,7 +5167,7 @@ static void make_bones(void)
 	if (!fp) return;
 
 	/* Save the info */
-	fprintf(fp, "%s\n", op_ptr->full_name);
+	fprintf(fp, "%s\n", player_name);
 	fprintf(fp, "%d\n", p_ptr->mhp);
 	fprintf(fp, "%d\n", p_ptr->prace);
 	fprintf(fp, "%d\n", p_ptr->ptemplate);
@@ -5214,7 +5214,7 @@ static void print_tomb(void)
 		/* Display the death screen. */
 		showfile("dead.txt", 0);
 
-		center_string(buf, op_ptr->full_name);
+		center_string(buf, player_name);
 
 		put_str(buf, 6, 11);
 
