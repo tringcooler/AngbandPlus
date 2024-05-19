@@ -1573,7 +1573,7 @@ static errr term_force_font(term_data *td, cptr path)
 	                         FIXED_PITCH | FF_DONTCARE, base);
 
 	/* Hack -- Unknown size */
-	if (!wid || !hgt)
+	// Always check the real font size. The Name can deceive you. //if (!wid || !hgt)
 	{
 		HDC hdcDesktop;
 		HFONT hfOld;
