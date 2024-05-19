@@ -351,6 +351,10 @@ FILE *my_fopen(cptr file, cptr mode)
 	/* Hack -- Try to parse the path */
 	if (path_parse(buf, 1024, file)) return (NULL);
 
+    // Make ftell() happy!
+    if(streq(mode, "r")) mode = "rb";
+    if(streq(mode, "w")) mode = "wb";
+
 	/* Attempt to fopen the file anyway */
 	return (fopen(buf, mode));
 }
