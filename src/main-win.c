@@ -927,7 +927,7 @@ static void term_getsize(term_data *td)
 	/* rc.bottom += 1; */
 
 	/* Adjust */
-	AdjustWindowRectEx(&rc, td->dwStyle, TRUE, td->dwExStyle);
+	AdjustWindowRectEx(&rc, td->dwStyle, !(td->dwExStyle & WS_EX_TOOLWINDOW), td->dwExStyle);
 
 	/* Total size */
 	td->size_wid = rc.right - rc.left;
@@ -1531,7 +1531,7 @@ static errr term_force_font(term_data *td, cptr path)
 		}
 
 		/* Remove unused font resources */
-		if (!used) RemoveFontResource(td->font_file);
+		//if (!used) RemoveFontResource(td->font_file);
 
 		/* Free the old name */
 		FREE(td->font_file);
@@ -1558,7 +1558,7 @@ static errr term_force_font(term_data *td, cptr path)
 	if (!check_file(buf)) return (1);
 
 	/* Load the new font */
-	if (!AddFontResource(buf)) return (1);
+	//if (!AddFontResource(buf)) return (1);
 
 	/* Save new font name */
 	td->font_file = string_make(base);
@@ -3752,7 +3752,7 @@ static LRESULT FAR PASCAL AngbandWndProc(HWND hWnd, UINT uMsg,
 			rc.bottom = rc.top + 24 * td->tile_hgt + td->size_oh1 + td->size_oh2 + 1;
 
 			/* Adjust */
-			AdjustWindowRectEx(&rc, td->dwStyle, TRUE, td->dwExStyle);
+			AdjustWindowRectEx(&rc, td->dwStyle, !(td->dwExStyle & WS_EX_TOOLWINDOW), td->dwExStyle);
 
 			/* Save minimum size */
 			lpmmi->ptMinTrackSize.x = rc.right - rc.left;
@@ -4073,7 +4073,7 @@ static LRESULT FAR PASCAL AngbandListProc(HWND hWnd, UINT uMsg,
 			rc.bottom = rc.top + 2 * td->tile_hgt + td->size_oh1 + td->size_oh2;
 
 			/* Adjust */
-			AdjustWindowRectEx(&rc, td->dwStyle, TRUE, td->dwExStyle);
+			AdjustWindowRectEx(&rc, td->dwStyle, !(td->dwExStyle & WS_EX_TOOLWINDOW), td->dwExStyle);
 
 			/* Save the minimum size */
 			lpmmi->ptMinTrackSize.x = rc.right - rc.left;
@@ -4089,7 +4089,7 @@ static LRESULT FAR PASCAL AngbandListProc(HWND hWnd, UINT uMsg,
 			rc.bottom += (td->tile_hgt - 1);
 
 			/* Adjust */
-			AdjustWindowRectEx(&rc, td->dwStyle, TRUE, td->dwExStyle);
+			AdjustWindowRectEx(&rc, td->dwStyle, !(td->dwExStyle & WS_EX_TOOLWINDOW), td->dwExStyle);
 
 			/* Save maximum size */
 			lpmmi->ptMaxSize.x = rc.right - rc.left;
