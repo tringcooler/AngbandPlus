@@ -3422,11 +3422,15 @@ extern int PlayerUID;
 
 
 /* Replaces letters and numbers with numbers in the range 0-35 */
-#define ator(x) \
-	((ISDIGIT(x)) ? (x + 26 - '0') : (ISALPHA(x)) ? A2I(FORCELOWER(x)) : -1)
+//#define ator(x) \
+//	((ISDIGIT(x)) ? (x + 26 - '0') : (ISALPHA(x)) ? A2I(FORCELOWER(x)) : -1)
 /* And vice versa */
-#define rtoa(x) ((x < 26) ? I2A(x) : (x < 36) ? (x - 26 + '0') : '!')
+//#define rtoa(x) ((x < 26) ? I2A(x) : (x < 36) ? (x - 26 + '0') : '!')
 
+// Match with table::option_chars
+#define ator(x) \
+    ((ISDIGIT(x)) ? (x + 52 - '0') : (ISALPHA(x)) ? ((ISLOWER(x)) ? (x - 'a') : (x + 26 - 'A')) : -1)
+#define rtoa(x) ((x < 26) ? (x + 'a') : (x < 52) ? (x - 26 + 'A') : (x < 62) ? (x - 52 + '0') : '!')
 
 
 /*** Sound constants ***/

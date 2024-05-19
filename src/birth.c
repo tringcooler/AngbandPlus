@@ -677,10 +677,7 @@ static bc_type birth_choice(int row, s16b max, cptr prompt, int *option,
 		}
 		else
 		{
-                        if (c>='a' && c<='z')
-			  (*option) = ator(c);
-                        else
-			  (*option) = ator(c)+26;
+			(*option) = ator(c);
 			if (((*option) >= 0) && ((*option) < max)) return BC_OKAY;
 			else bell(0);
 		}
